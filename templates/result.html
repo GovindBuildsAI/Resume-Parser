@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Parsed Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Parsed Result</h1>
+    <p><strong>File:</strong> {{ filename }}</p>
+    {% if data.error %}
+      <div class="card error">{{ data.error }}</div>
+    {% else %}
+      <div class="grid">
+        <div class="card"><strong>Name</strong><div>{{ data.name or '-' }}</div></div>
+        <div class="card"><strong>Email</strong><div>{{ data.email or '-' }}</div></div>
+        <div class="card"><strong>Phone</strong><div>{{ data.phone or '-' }}</div></div>
+        <div class="card"><strong>Experience (years)</strong><div>{{ data.experience_years or '-' }}</div></div>
+      </div>
+      <div class="card">
+        <strong>Skills</strong>
+        <ul>
+          {% for s in data.skills %}<li>{{ s }}</li>{% endfor %}
+          {% if not data.skills %}<li>-</li>{% endif %}
+        </ul>
+      </div>
+      <div class="card">
+        <strong>Education</strong>
+        <ul>
+          {% for e in data.education %}<li>{{ e }}</li>{% endfor %}
+          {% if not data.education %}<li>-</li>{% endif %}
+        </ul>
+      </div>
+      <details class="card">
+        <summary>Show Raw Text (for verification)</summary>
+        <pre>{{ data.raw_text[:4000] }}</pre>
+      </details>
+    {% endif %}
+    <p><a href="{{ url_for('index') }}">← Parse another resume</a> | <a href="{{ url_for('records') }}">View Saved Records</a></p>
+  </div>
+</body>
+</html>

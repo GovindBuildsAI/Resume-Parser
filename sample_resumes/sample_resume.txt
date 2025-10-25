@@ -1,0 +1,17 @@
+John Doe
+Email: john.doe@example.com
+Phone: +91 98765 43210
+
+Profile
+Self-motivated B.Tech student with experience in Python and web development.
+
+Education
+B.Tech in Information Science, ABC Institute, 2022 - Present
+12th - 2021
+
+Skills
+Python, C, HTML, CSS, JavaScript, Flask, Git, Linux, Data Analysis, Pandas, NumPy
+
+Experience
+Intern, Web Dev Labs — 2023-2024
+Worked on Flask APIs and basic data pipelines.
